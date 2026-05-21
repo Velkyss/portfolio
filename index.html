@@ -1,171 +1,357 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es" data-theme="dark" data-lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Velkyss</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-</head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Velkyss · Ezequiel Marchena — Desarrollo Android e iOS</title>
+<meta name="description" content="Velkyss es la marca de Ezequiel Marchena, desarrollador de apps nativas para Android e iOS. Productos enfocados, bien definidos y sostenibles.">
+<meta name="author" content="Ezequiel Marchena">
+<link rel="canonical" href="https://velkyss.dev/">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://velkyss.dev/">
+<meta property="og:title" content="Velkyss · Ezequiel Marchena">
+<meta property="og:description" content="Apps nativas para Android e iOS. Productos enfocados, bien definidos y sostenibles.">
+<meta property="og:image" content="https://velkyss.dev/assets/og-image.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Velkyss · Ezequiel Marchena">
+<meta name="twitter:description" content="Apps nativas para Android e iOS. Productos enfocados, bien definidos y sostenibles.">
+<meta name="twitter:image" content="https://velkyss.dev/assets/og-image.png">
+
+<link rel="icon" type="image/svg+xml" href="assets/symbol-dark.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Ezequiel Marchena",
+  "url": "https://velkyss.dev",
+  "jobTitle": "Desarrollador de aplicaciones móviles",
+  "knowsAbout": ["Android", "iOS", "Kotlin", "Jetpack Compose", "Swift", "Kotlin Multiplatform"],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Sanlúcar de Barrameda",
+    "addressCountry": "ES"
+  },
+  "sameAs": [
+    "https://github.com/velkyss",
+    "https://x.com/velkyss_dev"
+  ]
+}
+</script>
+</head>
 <body>
 
-    <nav>
-        <a href="#" class="nav-logo">
-            <img src="assets/symbol-dark.svg" alt="Velkyss">
-            Velkyss
-        </a>
-        <ul class="nav-links">
-            <li><a href="#projects" data-key="navProjects">Projects</a></li>
-            <li><a href="#stack" data-key="navStack">Stack</a></li>
-            <li><a href="#contact" data-key="navContact">Contact</a></li>
-            <li><button id="lang-toggle" class="nav-toggle">ES</button></li>
-            <li><button id="theme-toggle" class="nav-toggle">○ Light</button></li>
+<nav class="top">
+  <div class="container">
+    <a class="brand" href="#top" aria-label="Velkyss">
+      <img src="assets/symbol-dark.svg" alt="">
+      <span>Velkyss<span class="dot"></span></span>
+    </a>
+
+    <div class="nav-end">
+      <a class="nav-link" href="#nullfast"><span class="num">01</span><span data-i18n="navCase">Nullfast</span></a>
+      <a class="nav-link" href="#now"><span class="num">02</span><span data-i18n="navNow">ahora</span></a>
+      <a class="nav-link" href="#method"><span class="num">03</span><span data-i18n="navMethod">método</span></a>
+      <a class="nav-link" href="#contact"><span class="num">04</span><span data-i18n="navContact">contacto</span></a>
+
+      <div class="nav-sep"></div>
+
+      <button class="nav-toggle" id="lang-toggle" aria-label="Cambiar idioma">EN</button>
+      <button class="nav-toggle nav-toggle-icon" id="theme-toggle" aria-label="Cambiar tema">
+        <svg viewBox="0 0 12 12" aria-hidden="true">
+          <circle cx="6" cy="6" r="5" fill="none" stroke="currentColor" stroke-width="1.1"></circle>
+          <path d="M6 1 A5 5 0 0 1 6 11 Z" fill="currentColor"></path>
+        </svg>
+      </button>
+
+      <button class="nav-burger" id="nav-burger" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="nav-mobile" id="nav-mobile">
+    <a href="#nullfast"><span class="num">01</span><span data-i18n="navCase">Nullfast</span></a>
+    <a href="#now"><span class="num">02</span><span data-i18n="navNow">ahora</span></a>
+    <a href="#method"><span class="num">03</span><span data-i18n="navMethod">método</span></a>
+    <a href="#contact"><span class="num">04</span><span data-i18n="navContact">contacto</span></a>
+  </div>
+</nav>
+
+<span id="top"></span>
+
+<!-- ═══════════════ HERO ═══════════════ -->
+<header class="hero">
+  <div class="container">
+
+    <h1 class="hero-statement" data-i18n-html="heroStatement">
+      Apps centradas en lo que importa.<br>
+      <span class="soft">Mi</span> <span class="underline">criterio</span> <span class="soft">está en lo que decido</span> no <span class="soft">construir</span>.
+    </h1>
+
+    <div class="hero-meta-row">
+      <div class="meta-l" data-i18n-html="heroMetaL">
+        <strong>Velkyss</strong> es el nombre con el que firmo el trabajo.<br>
+        Detrás hay una persona escribiendo código nativo<br>
+        para Android e iOS.
+      </div>
+      <div class="meta-r" data-i18n-html="heroMetaR">
+        <span class="who">Ezequiel Marchena</span><br>
+        Sanlúcar de Barrameda · ES<br>
+        Activo desde 2017
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════ 01 · NULLFAST — CASO DE ESTUDIO ═══════════════ -->
+<section class="section section-band" id="nullfast">
+  <div class="container">
+
+    <div class="section-eyebrow">
+      <span class="num">01</span>
+      <span class="line"></span>
+      <span data-i18n="caseLabel">Caso de estudio</span>
+      <span class="meta">2026</span>
+    </div>
+
+    <div class="case-title-row">
+      <h2 class="case-title">Nullfast</h2>
+      <div class="case-tag-row">
+        <span class="case-tag">Android</span>
+        <span class="case-tag">Kotlin</span>
+        <span class="case-tag">Jetpack&nbsp;Compose</span>
+      </div>
+    </div>
+
+    <p class="case-lede" data-i18n-html="caseLede">
+      Una app de ayuno intermitente para Android. <em>Un temporizador que arranca rápido, un historial que sobrevive al teléfono, y nada más.</em> Sin cuenta, sin sincronización en la nube, sin suscripción mensual fingiendo ser un coach.
+    </p>
+
+    <div class="case-shots">
+      <figure class="shot">
+        <img src="assets/nullfast-timer.png" alt="Nullfast — pantalla del temporizador de ayuno" loading="lazy">
+      </figure>
+      <figure class="shot">
+        <img src="assets/nullfast-history.png" alt="Nullfast — historial de ayunos" loading="lazy">
+      </figure>
+      <figure class="shot">
+        <img src="assets/nullfast-water.png" alt="Nullfast — registro de agua" loading="lazy">
+      </figure>
+      <figure class="shot">
+        <img src="assets/nullfast-weight.png" alt="Nullfast — registro de peso" loading="lazy">
+      </figure>
+    </div>
+
+    <div class="case-grid">
+
+      <h3><span class="num">i.</span><span data-i18n="caseProblem">El problema</span></h3>
+      <div class="body">
+        <p data-i18n-html="caseProblemBody">
+          Quien ayuna no necesita una app que le venda planes premium ni que le obligue a registrarse para empezar. Necesita <strong>arrancar un temporizador en dos toques</strong> y que ese registro siga ahí dentro de un año. Las apps existentes mezclaban tracking, comunidad, coaching y muros de pago; cada interacción cargaba con peso ajeno al gesto que el usuario fue a hacer.
+        </p>
+      </div>
+
+      <h3><span class="num">ii.</span><span data-i18n="caseDecisions">Decisiones</span></h3>
+      <div class="body">
+        <ul class="decision-list">
+          <li><span class="k" data-i18n="kSpec">spec-first</span><span data-i18n="dec1">La especificación se escribió antes que el primer commit. Cada pantalla justifica su existencia por escrito.</span></li>
+          <li><span class="k" data-i18n="kPricing">modelo de pago</span><span data-i18n="dec2">Anuncios no invasivos y una compra única para quitarlos. Se paga una sola vez, sin suscripción ni cobros recurrentes.</span></li>
+          <li><span class="k" data-i18n="kData">datos</span><span data-i18n="dec3">Todo vive en el dispositivo. No hay backend, no hay cuenta, no hay sincronización en la nube. No hay, por tanto, incidente de datos posible.</span></li>
+          <li><span class="k" data-i18n="kPlatform">plataforma</span><span data-i18n="dec4">Nullfast es una app solo para Android. Construirla nativa, sin capa cross-platform, era lo natural: no había una segunda plataforma con la que compartir código.</span></li>
         </ul>
-        <button class="nav-hamburger" id="nav-hamburger" aria-label="Menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <div class="nav-mobile" id="nav-mobile">
-            <ul class="nav-mobile-links">
-                <li><a href="#projects" data-key="navProjects">Projects</a></li>
-                <li><a href="#stack" data-key="navStack">Stack</a></li>
-                <li><a href="#contact" data-key="navContact">Contact</a></li>
-                <li><button id="lang-toggle-mobile" class="nav-toggle">ES</button></li>
-                <li><button id="theme-toggle-mobile" class="nav-toggle">○ Light</button></li>
-            </ul>
-        </div>
-    </nav>
+      </div>
 
-    <section id="hero">
-        <p class="hero-eyebrow" data-key="eyebrow">Android Specialist · Freelance & Consulting</p>
-        <h1 class="hero-title">Build.<br>Ship.<br>Done.</h1>
-        <p class="hero-sub" data-key="heroSub">I build focused digital products. Android specialist with a solid iOS
-            background —
-            architecture, UX, and shipping things that work. Available for development and consulting.</p>
-        <div class="hero-cta-row">
-            <a href="#projects" class="btn-primary" data-key="seeProjects">See projects</a>
-            <a href="#contact" class="btn-ghost" data-key="getInTouch">Get in touch</a>
-        </div>
-    </section>
+      <h3><span class="num">iii.</span><span data-i18n="caseOut">Fuera del alcance</span></h3>
+      <div class="body">
+        <ul class="out-list">
+          <li data-i18n="out1">Coaching y planes guiados</li>
+          <li data-i18n="out2">Comunidad y feed social</li>
+          <li data-i18n="out3">Suscripción mensual «premium»</li>
+          <li data-i18n="out4">Sincronización entre dispositivos</li>
+          <li data-i18n="out5">Integraciones con wearables</li>
+          <li data-i18n="out6">Recetas, planes nutricionales</li>
+        </ul>
+      </div>
 
-    <section id="projects">
-        <p class="section-label" data-key="workLabel">Work</p>
-        <h2 class="section-title" data-key="projectsTitle">Projects</h2>
-        <div class="projects-grid">
-            <div class="project-card">
-                <span class="project-tag">Android · Compose · Play Store</span>
-                <h3 class="project-name">Nullfast</h3>
-                <p class="project-desc" data-key="nullfastDescr">Intermittent fasting app. Clean timer, history, water and weight tracking. No subscriptions, no fluff.</p>
-                <a href="https://play.google.com/store/apps/details?id=com.velkyss.nullfast" class="project-link" data-key="viewOnPlayStore" target="_blank" rel="noopener">View on Play Store</a>
-            </div>
-            <div class="project-card">
-                <span class="project-tag">Android · Compose · <span data-key="inDevelopmentTag">In development</span></span>
-                <h3 class="project-name">Triplo</h3>
-                <p class="project-desc" data-key="triploDescr">Travel planning app. Packing checklists, POIs, reservations and budget tracking — activate only what you need.</p>
-                <a href="#" class="project-link" data-key="comingSoonLabel">Coming soon</a>
-            </div>
-            <div class="project-card">
-                <span class="project-tag">Android · KMP · <span data-key="inDevelopmentTag">In development</span></span>
-                <h3 class="project-name">HomeTogether Suite</h3>
-                <p class="project-desc" data-key="homeTogetherDescr">A suite of home management apps designed for couples. Android and iOS from a single codebase.</p>
-                <a href="#" class="project-link" data-key="comingSoonLabel">Coming soon</a>
-            </div>
-        </div>
-    </section>
+      <h3><span class="num">iv.</span><span data-i18n="caseResult">Resultado</span></h3>
+      <div class="body">
+        <p data-i18n-html="caseResultBody">
+          Vive en Google Play. Mantenida por una sola persona, sin servidor que pagar ni cuenta de usuario que migrar. El alcance acotado es lo que la hace sostenible: nada de la app requiere atención semanal para seguir funcionando el año que viene.
+        </p>
+        <a class="result-link" href="https://play.google.com/store/apps/details?id=com.velkyss.nullfast" target="_blank" rel="noopener">
+          <span data-i18n="caseResultCta">Ver en Play Store</span>
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 9L9 3 M9 3H4 M9 3V8"></path></svg>
+        </a>
+      </div>
+    </div>
 
-    <section id="stack">
-        <p class="section-label" data-key="techLabel">Technologies</p>
-        <h2 class="section-title" data-key="stackLabel">Stack</h2>
-        <div class="stack-grid">
-            <div class="stack-group">
-                <h3 class="stack-group-title">Android</h3>
-                <ul class="stack-list">
-                    <li>Kotlin</li>
-                    <li>Java</li>
-                    <li>Android SDK</li>
-                    <li>Jetpack Compose</li>
-                    <li>MVVM</li>
-                    <li data-key="cleanArchitectureLabel">Clean Architecture</li>
-                </ul>
-            </div>
-            <div class="stack-group">
-                <h3 class="stack-group-title">iOS</h3>
-                <ul class="stack-list">
-                    <li>Swift</li>
-                    <li>iOS SDK</li>
-                    <li>MVVM</li>
-                    <li>Realm</li>
-                    <li>Alamofire</li>
-                </ul>
-            </div>
-            <div class="stack-group">
-                <h3 class="stack-group-title">Cross-platform</h3>
-                <ul class="stack-list">
-                    <li>Kotlin Multiplatform</li>
-                    <li>Flutter</li>
-                    <li>Ionic</li>
-                    <li>Angular-Capacitor</li>
-                </ul>
-            </div>
-            <div class="stack-group">
-                <h3 class="stack-group-title">Tools</h3>
-                <ul class="stack-list">
-                    <li>Firebase</li>
-                    <li>REST APIs</li>
-                    <li>Bluetooth</li>
-                    <li data-key="thirdPartySdkLabel">Third-party SDKs</li>
-                    <li>Crashlytics</li>
-                    <li data-key="accesibilityLabel">Accessibility</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+    <blockquote class="pull-quote">
+      <p data-i18n-html="casePullquote">
+        Lo que se decide <em>no</em> construir tiene tanto peso como lo que sí. Decir que no a la suscripción decidió la arquitectura: sin cuenta, sin servidor, sin atadura.
+      </p>
+    </blockquote>
 
-    <section id="contact">
-        <div class="contact-info">
-            <h2 class="contact-title" data-key="contactTitle">Let's build<br>something.</h2>
-            <p class="contact-sub" data-key="contactSub">Available for freelance projects, consulting, and interesting
-                collaborations. Based
-                in Sanlúcar de Barrameda, working remotely.</p>
-            <div class="contact-links">
-                <a href="mailto:contact@velkyss.dev" class="contact-link">contact@velkyss.dev</a>
-                <a href="https://github.com/velkyss" class="contact-link">github.com/velkyss</a>
-                <a href="https://x.com/velkyss_dev" class="contact-link">@velkyss_dev</a>
-            </div>
-        </div>
-        <form id="contact-form" class="contact-form" action="https://formspree.io/f/xvzvkbkk" method="POST">
-            <div class="form-field">
-                <input type="text" name="name" data-key="formName" placeholder="Name">
-            </div>
-            <div class="form-field">
-                <input type="email" name="email" data-key="formEmail" placeholder="Email">
-            </div>
-            <div class="form-field">
-                <textarea name="message" data-key="formMessage" placeholder="Message"></textarea>
-            </div>
-            <input type="hidden" name="_next" value="https://velkyss.dev">
-            <button type="submit" class="btn-primary" data-key="formSend">Send message</button>
-        </form>
-        <div id="form-success" class="form-success" style="display:none;">
-            <p class="success-title" data-key="successTitle">Message sent.</p>
-            <p class="success-sub" data-key="successSub">I'll get back to you as soon as possible.</p>
-        </div>
-    </section>
+  </div>
+</section>
 
-    <footer>
-        <span class="footer-brand">Velkyss</span>
-        <span class="footer-meta">velkyss.dev · 2026</span>
-    </footer>
+<!-- ═══════════════ 02 · EN QUÉ TRABAJO AHORA ═══════════════ -->
+<section class="section" id="now">
+  <div class="container">
+    <div class="section-eyebrow">
+      <span class="num">02</span>
+      <span class="line"></span>
+      <span data-i18n="nowLabel">Trayectoria</span>
+      <span class="meta" data-i18n="nowMeta">En desarrollo · 2026</span>
+    </div>
 
-    <script src="strings.js"></script>
-    <script src="i18n.js"></script>
-    <script src="theme.js"></script>
-    <script src="main.js"></script>
+    <h2 class="section-title" data-i18n="nowTitle">En qué trabajo ahora</h2>
+    <p class="section-lede" data-i18n="nowIntro">
+      Después de Nullfast, dos productos en desarrollo bajo la misma disciplina. No son apps publicadas todavía; son hacia dónde va el trabajo.
+    </p>
+
+    <div class="trajectory">
+      <article class="trajectory-item">
+        <div class="trajectory-head">
+          <h3 class="trajectory-name">Triplo</h3>
+          <span class="trajectory-status" data-i18n="triploStatus">En desarrollo</span>
+          <span class="trajectory-plat">Android</span>
+        </div>
+        <p class="trajectory-desc" data-i18n-html="triploDesc">
+          App de planificación de viajes. Cada viaje activa solo los módulos que necesita: equipaje, itinerario, reservas, presupuesto. El resto, fuera.
+        </p>
+      </article>
+
+      <article class="trajectory-item">
+        <div class="trajectory-head">
+          <h3 class="trajectory-name">HomeTogether</h3>
+          <span class="trajectory-status" data-i18n="htStatus">En desarrollo</span>
+          <span class="trajectory-plat">Android · iOS</span>
+        </div>
+        <p class="trajectory-desc" data-i18n-html="htDesc">
+          Suite de gestión doméstica para parejas. Datos compartidos entre dos personas y entre Android e iOS, desde una sola base de código en Kotlin Multiplatform.
+        </p>
+      </article>
+    </div>
+
+    <p class="now-closing" data-i18n="nowClosing">
+      Mismo principio que Nullfast: terminar cuando lo esencial funciona, no cuando se agota la lista de funciones. No hay tarjetas vacías que rellenar aquí. Cuando estén listas para enseñarse, se enseñarán.
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════ 03 · MÉTODO + STACK ═══════════════ -->
+<section class="section section-band" id="method">
+  <div class="container">
+    <div class="section-eyebrow">
+      <span class="num">03</span>
+      <span class="line"></span>
+      <span data-i18n="methodLabel">Método</span>
+      <span class="meta" data-i18n="methodMeta">Cuatro decisiones · un stack</span>
+    </div>
+
+    <h2 class="section-title" data-i18n="methodTitle">Cómo trabajo</h2>
+    <p class="section-lede" data-i18n="methodLede">
+      Cuatro decisiones, no cuatro reglas. Lo que pienso antes de empezar cada app. Y no siempre lo resuelvo de la misma manera.
+    </p>
+
+    <div class="method-grid">
+      <ul class="method-points">
+        <li><span class="n">01</span><span data-i18n-html="m1"><strong>Decidir antes de construir.</strong> En Nullfast fue una spec escrita entera antes del primer commit. No siempre toma esa forma, pero la arquitectura nunca se improvisa.</span></li>
+        <li><span class="n">02</span><span data-i18n-html="m2"><strong>Nativo por defecto, cross-platform por decisión.</strong> Compose en Android, SwiftUI en iOS. Kotlin Multiplatform cuando hay dos plataformas que de verdad comparten lógica, como en HomeTogether.</span></li>
+        <li><span class="n">03</span><span data-i18n-html="m3"><strong>Funcionar sin depender de un servidor, siempre que se pueda.</strong> Nullfast no toca la red. Cuando una app sí la necesita, la sincronización se diseña desde el principio, no se parchea al final.</span></li>
+        <li><span class="n">04</span><span data-i18n-html="m4"><strong>El modelo sigue al producto.</strong> Una compra única cuando no hay coste recurrente, como en Nullfast. Una suscripción cuando el producto se sostiene sobre infraestructura continua.</span></li>
+      </ul>
+
+      <div class="stack-table" aria-label="Stack">
+        <div class="stack-row">
+          <span class="role">Android</span>
+          <span class="items">Kotlin <span class="sep">·</span> Jetpack Compose <span class="sep">·</span> MVVM <span class="sep">·</span> <span data-i18n="stackCleanArch">Clean Architecture</span></span>
+        </div>
+        <div class="stack-row">
+          <span class="role">iOS</span>
+          <span class="items">Swift <span class="sep">·</span> SwiftUI <span class="sep">·</span> Realm</span>
+        </div>
+        <div class="stack-row">
+          <span class="role" data-i18n="stackCross">Cross</span>
+          <span class="items">Kotlin Multiplatform <span class="sep">·</span> Flutter</span>
+        </div>
+        <div class="stack-row">
+          <span class="role" data-i18n="stackTools">Herramientas</span>
+          <span class="items">Firebase <span class="sep">·</span> REST <span class="sep">·</span> Bluetooth <span class="sep">·</span> Crashlytics</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ 04 · CONTACTO ═══════════════ -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="section-eyebrow">
+      <span class="num">04</span>
+      <span class="line"></span>
+      <span data-i18n="contactLabel">Contacto</span>
+      <span class="meta" data-i18n="contactMeta">Respuesta en 48&nbsp;h</span>
+    </div>
+
+    <h2 class="contact-title" data-i18n-html="contactTitle">
+      Hablemos de un proyecto pequeño<br>y bien definido.
+    </h2>
+    <p class="contact-sub" data-i18n="contactSub">
+      Trabajo en remoto desde Sanlúcar de Barrameda con clientes en España y fuera. No respondo a mensajes genéricos ni a propuestas vagas, pero sí, y rápido, a un correo concreto.
+    </p>
+
+    <div class="contact-channels">
+      <a class="channel" href="mailto:contact@velkyss.dev">
+        <span><span class="k">Email</span><br>contact@velkyss.dev</span>
+        <span class="arrow">↗</span>
+      </a>
+      <a class="channel" href="https://github.com/velkyss" target="_blank" rel="noopener">
+        <span><span class="k">GitHub</span><br>github.com/velkyss</span>
+        <span class="arrow">↗</span>
+      </a>
+      <a class="channel" href="https://x.com/velkyss_dev" target="_blank" rel="noopener">
+        <span><span class="k">X / Twitter</span><br>@velkyss_dev</span>
+        <span class="arrow">↗</span>
+      </a>
+      <a class="channel" href="https://play.google.com/store/apps/details?id=com.velkyss.nullfast" target="_blank" rel="noopener">
+        <span><span class="k">Play Store</span><br>com.velkyss.nullfast</span>
+        <span class="arrow">↗</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer>
+  <div class="container">
+    <div class="foot-l">
+      <img src="assets/symbol-dark.svg" alt="">
+      <span>Velkyss · Ezequiel Marchena</span>
+    </div>
+    <div class="foot-r">
+      <span>velkyss.dev</span>
+      <span class="sep">·</span>
+      <span>© 2026</span>
+      <span class="sep">·</span>
+      <span data-i18n="footMade">Hecho en Sanlúcar de Barrameda</span>
+    </div>
+  </div>
+</footer>
+
+<script src="strings.js"></script>
+<script src="i18n.js"></script>
+<script src="theme.js"></script>
+<script src="main.js"></script>
 </body>
-
 </html>

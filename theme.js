@@ -1,29 +1,39 @@
-let currentTheme = 'dark';
+/* ════════════════════════════════════════════════════════════════
+   velkyss.dev — tema claro / oscuro
+   Orden de decisión: preferencia guardada → preferencia del sistema
+   → oscuro (por defecto de marca).
+   ════════════════════════════════════════════════════════════════ */
 
-function applyTheme(theme) {
-    currentTheme = theme;
-    if (theme === 'light') {
-        document.documentElement.classList.add('light');
-    } else {
-        document.documentElement.classList.remove('light');
+(function () {
+  const STORAGE_KEY = "velkyss-theme";
+  let currentTheme;
+
+  function applyTheme(theme) {
+    currentTheme = theme === "light" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", currentTheme);
+    const toggle = document.getElementById("theme-toggle");
+    if (toggle) {
+      toggle.setAttribute(
+        "aria-label",
+        currentTheme === "dark" ? "Cambiar a tema claro" : "Cambiar a tema oscuro"
+      );
     }
-    const label = theme === 'dark' ? '○ Light' : '● Dark';
-    document.getElementById('theme-toggle').textContent = label;
-    document.getElementById('theme-toggle-mobile').textContent = label;
-    localStorage.setItem('velkyss-theme', theme);
-}
+    localStorage.setItem(STORAGE_KEY, currentTheme);
+  }
 
-const savedTheme = localStorage.getItem('velkyss-theme');
-if (savedTheme) {
-    applyTheme(savedTheme);
-} else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
-    applyTheme('light');
-} else {
-    applyTheme('dark'); // fallback explícito
-}
+  const saved = localStorage.getItem(STORAGE_KEY);
+  if (saved) {
+    applyTheme(saved);
+  } else if (window.matchMedia("(prefers-color-scheme: light)").matches) {
+    applyTheme("light");
+  } else {
+    applyTheme("dark");
+  }
 
-['theme-toggle', 'theme-toggle-mobile'].forEach(function (id) {
-    document.getElementById(id).addEventListener('click', function () {
-        applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+  const toggle = document.getElementById("theme-toggle");
+  if (toggle) {
+    toggle.addEventListener("click", function () {
+      applyTheme(currentTheme === "dark" ? "light" : "dark");
     });
-});
+  }
+})();

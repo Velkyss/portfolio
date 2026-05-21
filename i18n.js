@@ -1,32 +1,50 @@
-let currentLang = 'en';
+/* ════════════════════════════════════════════════════════════════
+   velkyss.dev — i18n
+   Aplica las cadenas de strings.js. Dos tipos de nodo:
+     [data-i18n]       → texto plano  (textContent)
+     [data-i18n-html]  → contiene markup intencional (innerHTML)
+   ════════════════════════════════════════════════════════════════ */
 
-function applyLanguage(lang) {
+(function () {
+  const STORAGE_KEY = "velkyss-lang";
+  let currentLang;
+
+  function applyLanguage(lang) {
+    if (!strings[lang]) lang = "es";
     currentLang = lang;
-    document.querySelectorAll('[data-key]').forEach(function (el) {
-        const key = el.getAttribute('data-key');
-        const value = strings[lang][key];
-        if (!value) return;
-        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
-            el.placeholder = value;
-        } else {
-            el.innerHTML = value;
-        }
-    });
-    const label = lang === 'en' ? 'ES' : 'EN';
-    document.getElementById('lang-toggle').textContent = label;
-    document.getElementById('lang-toggle-mobile').textContent = label;
-    localStorage.setItem('velkyss-lang', lang);
-}
+    const dict = strings[lang];
 
-const savedLang = localStorage.getItem('velkyss-lang');
-if (savedLang) {
-    applyLanguage(savedLang);
-} else if (navigator.language.startsWith('es')) {
-    applyLanguage('es');
-}
+    document.documentElement.setAttribute("lang", lang);
+    document.documentElement.setAttribute("data-lang", lang);
 
-['lang-toggle', 'lang-toggle-mobile'].forEach(function (id) {
-    document.getElementById(id).addEventListener('click', function () {
-        applyLanguage(currentLang === 'en' ? 'es' : 'en');
+    document.querySelectorAll("[data-i18n]").forEach(function (el) {
+      const value = dict[el.getAttribute("data-i18n")];
+      if (value !== undefined) el.textContent = value;
     });
-});
+
+    document.querySelectorAll("[data-i18n-html]").forEach(function (el) {
+      const value = dict[el.getAttribute("data-i18n-html")];
+      if (value !== undefined) el.innerHTML = value;
+    });
+
+    // El botón muestra el idioma al que se cambiará, no el actual.
+    const toggle = document.getElementById("lang-toggle");
+    if (toggle) toggle.textContent = lang === "es" ? "EN" : "ES";
+
+    localStorage.setItem(STORAGE_KEY, lang);
+  }
+
+  // Idioma inicial: preferencia guardada → idioma del navegador → español.
+  const saved = localStorage.getItem(STORAGE_KEY);
+  const initial = saved
+    ? saved
+    : (navigator.language || "es").toLowerCase().startsWith("es") ? "es" : "en";
+  applyLanguage(initial);
+
+  const toggle = document.getElementById("lang-toggle");
+  if (toggle) {
+    toggle.addEventListener("click", function () {
+      applyLanguage(currentLang === "es" ? "en" : "es");
+    });
+  }
+})();
