@@ -113,93 +113,34 @@
   </div>
 </header>
 
-<!-- ═══════════════ 01 · NULLFAST — CASO DE ESTUDIO ═══════════════ -->
+<!-- ═══════════════ 01 · NULLFAST — TARJETA RESUMEN ═══════════════ -->
 <section class="section section-band" id="nullfast">
   <div class="container">
 
-    <div class="section-eyebrow">
+    <div class="section-eyebrow reveal">
       <span class="num">01</span>
       <span class="line"></span>
-      <span data-i18n="caseLabel">Caso de estudio</span>
+      <span data-i18n="projEyebrow">Caso de estudio</span>
       <span class="meta">2026</span>
     </div>
 
-    <div class="case-title-row">
-      <h2 class="case-title">Nullfast</h2>
-      <div class="case-tag-row">
-        <span class="case-tag">Android</span>
-        <span class="case-tag">Kotlin</span>
-        <span class="case-tag">Jetpack&nbsp;Compose</span>
-      </div>
-    </div>
-
-    <p class="case-lede" data-i18n-html="caseLede">
-      Una app de ayuno intermitente para Android. <em>Un temporizador que arranca rápido, un historial que sobrevive al teléfono, y nada más.</em> Sin cuenta, sin sincronización en la nube, sin suscripción mensual fingiendo ser un coach.
-    </p>
-
-    <div class="case-shots">
-      <figure class="shot">
-        <img src="assets/nullfast-timer.png" alt="Nullfast — pantalla del temporizador de ayuno" loading="lazy">
-      </figure>
-      <figure class="shot">
-        <img src="assets/nullfast-history.png" alt="Nullfast — historial de ayunos" loading="lazy">
-      </figure>
-      <figure class="shot">
-        <img src="assets/nullfast-water.png" alt="Nullfast — registro de agua" loading="lazy">
-      </figure>
-      <figure class="shot">
-        <img src="assets/nullfast-weight.png" alt="Nullfast — registro de peso" loading="lazy">
-      </figure>
-    </div>
-
-    <div class="case-grid">
-
-      <h3><span class="num">i.</span><span data-i18n="caseProblem">El problema</span></h3>
-      <div class="body">
-        <p data-i18n-html="caseProblemBody">
-          Quien ayuna no necesita una app que le venda planes premium ni que le obligue a registrarse para empezar. Necesita <strong>arrancar un temporizador en dos toques</strong> y que ese registro siga ahí dentro de un año. Las apps existentes mezclaban tracking, comunidad, coaching y muros de pago; cada interacción cargaba con peso ajeno al gesto que el usuario fue a hacer.
+    <a class="case-card reveal" href="projects/nullfast/">
+      <div class="case-card-main">
+        <h2 class="case-card-name">Nullfast</h2>
+        <p class="case-card-summary" data-i18n="cardSummary">
+          App de ayuno intermitente para Android. Un temporizador que arranca rápido, un historial que sobrevive al teléfono, y nada más. Sin cuenta, sin nube, sin suscripción.
         </p>
+        <span class="case-card-cta">
+          <span data-i18n="cardCta">Ver el caso completo</span>
+          <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 11L11 3 M11 3H5 M11 3V9"></path></svg>
+        </span>
       </div>
-
-      <h3><span class="num">ii.</span><span data-i18n="caseDecisions">Decisiones</span></h3>
-      <div class="body">
-        <ul class="decision-list">
-          <li><span class="k" data-i18n="kSpec">spec-first</span><span data-i18n="dec1">La especificación se escribió antes que el primer commit. Cada pantalla justifica su existencia por escrito.</span></li>
-          <li><span class="k" data-i18n="kPricing">modelo de pago</span><span data-i18n="dec2">Anuncios no invasivos y una compra única para quitarlos. Se paga una sola vez, sin suscripción ni cobros recurrentes.</span></li>
-          <li><span class="k" data-i18n="kData">datos</span><span data-i18n="dec3">Todo vive en el dispositivo. No hay backend, no hay cuenta, no hay sincronización en la nube. No hay, por tanto, incidente de datos posible.</span></li>
-          <li><span class="k" data-i18n="kPlatform">plataforma</span><span data-i18n="dec4">Nullfast es una app solo para Android. Construirla nativa, sin capa cross-platform, era lo natural: no había una segunda plataforma con la que compartir código.</span></li>
-        </ul>
+      <div class="case-card-meta">
+        <div class="ccm-row"><span class="ccm-k" data-i18n="cardMetaScope">Una persona</span></div>
+        <div class="ccm-row"><span class="ccm-k" data-i18n="cardMetaPlatform">Android · Compose</span></div>
+        <div class="ccm-row"><span class="ccm-status" data-i18n="cardMetaStatus">En Play Store</span></div>
       </div>
-
-      <h3><span class="num">iii.</span><span data-i18n="caseOut">Fuera del alcance</span></h3>
-      <div class="body">
-        <ul class="out-list">
-          <li data-i18n="out1">Coaching y planes guiados</li>
-          <li data-i18n="out2">Comunidad y feed social</li>
-          <li data-i18n="out3">Suscripción mensual «premium»</li>
-          <li data-i18n="out4">Sincronización entre dispositivos</li>
-          <li data-i18n="out5">Integraciones con wearables</li>
-          <li data-i18n="out6">Recetas, planes nutricionales</li>
-        </ul>
-      </div>
-
-      <h3><span class="num">iv.</span><span data-i18n="caseResult">Resultado</span></h3>
-      <div class="body">
-        <p data-i18n-html="caseResultBody">
-          Vive en Google Play. Mantenida por una sola persona, sin servidor que pagar ni cuenta de usuario que migrar. El alcance acotado es lo que la hace sostenible: nada de la app requiere atención semanal para seguir funcionando el año que viene.
-        </p>
-        <a class="result-link" href="https://play.google.com/store/apps/details?id=com.velkyss.nullfast" target="_blank" rel="noopener">
-          <span data-i18n="caseResultCta">Ver en Play Store</span>
-          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 9L9 3 M9 3H4 M9 3V8"></path></svg>
-        </a>
-      </div>
-    </div>
-
-    <blockquote class="pull-quote">
-      <p data-i18n-html="casePullquote">
-        Lo que se decide <em>no</em> construir tiene tanto peso como lo que sí. Decir que no a la suscripción decidió la arquitectura: sin cuenta, sin servidor, sin atadura.
-      </p>
-    </blockquote>
+    </a>
 
   </div>
 </section>
@@ -207,19 +148,19 @@
 <!-- ═══════════════ 02 · EN QUÉ TRABAJO AHORA ═══════════════ -->
 <section class="section" id="now">
   <div class="container">
-    <div class="section-eyebrow">
+    <div class="section-eyebrow reveal">
       <span class="num">02</span>
       <span class="line"></span>
       <span data-i18n="nowLabel">Trayectoria</span>
       <span class="meta" data-i18n="nowMeta">En desarrollo · 2026</span>
     </div>
 
-    <h2 class="section-title" data-i18n="nowTitle">En qué trabajo ahora</h2>
-    <p class="section-lede" data-i18n="nowIntro">
+    <h2 class="section-title reveal" data-i18n="nowTitle">En qué trabajo ahora</h2>
+    <p class="section-lede reveal" data-i18n="nowIntro">
       Después de Nullfast, dos productos en desarrollo bajo la misma disciplina. No son apps publicadas todavía; son hacia dónde va el trabajo.
     </p>
 
-    <div class="trajectory">
+    <div class="trajectory reveal-stagger">
       <article class="trajectory-item">
         <div class="trajectory-head">
           <h3 class="trajectory-name">Triplo</h3>
@@ -243,8 +184,8 @@
       </article>
     </div>
 
-    <p class="now-closing" data-i18n="nowClosing">
-      Mismo principio que Nullfast: terminar cuando lo esencial funciona, no cuando se agota la lista de funciones. No hay tarjetas vacías que rellenar aquí. Cuando estén listas para enseñarse, se enseñarán.
+    <p class="now-closing reveal" data-i18n="nowClosing">
+      Mismo principio que Nullfast: terminar cuando lo esencial funciona, no cuando se agota la lista de funciones. No hay tarjetas vacías que rellenar aquí.
     </p>
   </div>
 </section>
@@ -252,27 +193,27 @@
 <!-- ═══════════════ 03 · MÉTODO + STACK ═══════════════ -->
 <section class="section section-band" id="method">
   <div class="container">
-    <div class="section-eyebrow">
+    <div class="section-eyebrow reveal">
       <span class="num">03</span>
       <span class="line"></span>
       <span data-i18n="methodLabel">Método</span>
       <span class="meta" data-i18n="methodMeta">Cuatro decisiones · un stack</span>
     </div>
 
-    <h2 class="section-title" data-i18n="methodTitle">Cómo trabajo</h2>
-    <p class="section-lede" data-i18n="methodLede">
+    <h2 class="section-title reveal" data-i18n="methodTitle">Cómo trabajo</h2>
+    <p class="section-lede reveal" data-i18n="methodLede">
       Cuatro decisiones, no cuatro reglas. Lo que pienso antes de empezar cada app. Y no siempre lo resuelvo de la misma manera.
     </p>
 
     <div class="method-grid">
-      <ul class="method-points">
+      <ul class="method-points reveal-stagger">
         <li><span class="n">01</span><span data-i18n-html="m1"><strong>Decidir antes de construir.</strong> En Nullfast fue una spec escrita entera antes del primer commit. No siempre toma esa forma, pero la arquitectura nunca se improvisa.</span></li>
         <li><span class="n">02</span><span data-i18n-html="m2"><strong>Nativo por defecto, cross-platform por decisión.</strong> Compose en Android, SwiftUI en iOS. Kotlin Multiplatform cuando hay dos plataformas que de verdad comparten lógica, como en HomeTogether.</span></li>
-        <li><span class="n">03</span><span data-i18n-html="m3"><strong>Funcionar sin depender de un servidor, siempre que se pueda.</strong> Nullfast no toca la red. Cuando una app sí la necesita, la sincronización se diseña desde el principio, no se parchea al final.</span></li>
-        <li><span class="n">04</span><span data-i18n-html="m4"><strong>El modelo sigue al producto.</strong> Una compra única cuando no hay coste recurrente, como en Nullfast. Una suscripción cuando el producto se sostiene sobre infraestructura continua.</span></li>
+        <li><span class="n">03</span><span data-i18n-html="m3"><strong>Offline-first cuando el producto lo permite.</strong> Si los datos pueden vivir en el dispositivo, viven ahí, y la app funciona sin conexión. Nullfast es el caso extremo: la red solo entra para comprobar la versión mínima. Otros productos dependen de ella, y entonces la sincronización se diseña desde el principio.</span></li>
+        <li><span class="n">04</span><span data-i18n-html="m4"><strong>El modelo sigue al producto.</strong> Cada decisión, desde la arquitectura hasta la monetización o qué entra y qué no, responde a lo que la app necesita ser, no a una moda ni a una plantilla.</span></li>
       </ul>
 
-      <div class="stack-table" aria-label="Stack">
+      <div class="stack-table reveal-stagger" aria-label="Stack">
         <div class="stack-row">
           <span class="role">Android</span>
           <span class="items">Kotlin <span class="sep">·</span> Jetpack Compose <span class="sep">·</span> MVVM <span class="sep">·</span> <span data-i18n="stackCleanArch">Clean Architecture</span></span>
@@ -297,21 +238,21 @@
 <!-- ═══════════════ 04 · CONTACTO ═══════════════ -->
 <section class="section" id="contact">
   <div class="container">
-    <div class="section-eyebrow">
+    <div class="section-eyebrow reveal">
       <span class="num">04</span>
       <span class="line"></span>
       <span data-i18n="contactLabel">Contacto</span>
-      <span class="meta" data-i18n="contactMeta">Respuesta en 48&nbsp;h</span>
+      <span class="meta" data-i18n="contactMeta">Respuesta en 48 h</span>
     </div>
 
-    <h2 class="contact-title" data-i18n-html="contactTitle">
-      Hablemos de un proyecto pequeño<br>y bien definido.
+    <h2 class="contact-title reveal" data-i18n-html="contactTitle">
+      La confianza se construye en los detalles.
     </h2>
-    <p class="contact-sub" data-i18n="contactSub">
-      Trabajo en remoto desde Sanlúcar de Barrameda con clientes en España y fuera. No respondo a mensajes genéricos ni a propuestas vagas, pero sí, y rápido, a un correo concreto.
+    <p class="contact-sub reveal" data-i18n="contactSub">
+      Desarrollador Android e iOS. Producto propio en la Play Store. Si buscas a alguien para tu equipo, escríbeme.
     </p>
 
-    <div class="contact-channels">
+    <div class="contact-channels reveal-stagger">
       <a class="channel" href="mailto:contact@velkyss.dev">
         <span><span class="k">Email</span><br>contact@velkyss.dev</span>
         <span class="arrow">↗</span>

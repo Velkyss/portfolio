@@ -33,7 +33,13 @@
   const toggle = document.getElementById("theme-toggle");
   if (toggle) {
     toggle.addEventListener("click", function () {
-      applyTheme(currentTheme === "dark" ? "light" : "dark");
+      const next = currentTheme === "dark" ? "light" : "dark";
+      // Crossfade suave si el navegador soporta View Transitions.
+      if (document.startViewTransition) {
+        document.startViewTransition(function () { applyTheme(next); });
+      } else {
+        applyTheme(next);
+      }
     });
   }
 })();

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark" data-lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nullfast — Caso de estudio · Velkyss</title>
+<meta name="description" content="Nullfast: app de ayuno intermitente para Android, construida por una sola persona. El problema, las decisiones de producto y arquitectura, y lo que se decidió dejar fuera.">
+<meta name="author" content="Ezequiel Marchena">
+<link rel="canonical" href="https://velkyss.dev/projects/nullfast/">
+
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://velkyss.dev/projects/nullfast/">
+<meta property="og:title" content="Nullfast — Caso de estudio · Velkyss">
+<meta property="og:description" content="App de ayuno intermitente para Android. El problema, las decisiones, y lo que se dejó fuera.">
+<meta property="og:image" content="https://velkyss.dev/assets/og-image.png">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Nullfast — Caso de estudio · Velkyss">
+<meta name="twitter:description" content="App de ayuno intermitente para Android. El problema, las decisiones, y lo que se dejó fuera.">
+<meta name="twitter:image" content="https://velkyss.dev/assets/og-image.png">
+
+<link rel="icon" type="image/svg+xml" href="../../assets/symbol-dark.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@800&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="../../style.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CreativeWork",
+  "name": "Nullfast",
+  "applicationCategory": "HealthApplication",
+  "operatingSystem": "Android",
+  "author": {
+    "@type": "Person",
+    "name": "Ezequiel Marchena",
+    "url": "https://velkyss.dev"
+  },
+  "url": "https://play.google.com/store/apps/details?id=com.velkyss.nullfast"
+}
+</script>
+</head>
+<body class="project-page">
+
+<nav class="top">
+  <div class="container">
+    <a class="brand" href="../../" aria-label="Velkyss">
+      <img src="../../assets/symbol-dark.svg" alt="">
+      <span>Velkyss<span class="dot"></span></span>
+    </a>
+
+    <div class="nav-end">
+      <a class="nav-link nav-back" href="../../">
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M11 3L3 11 M3 11H9 M3 11V5"></path></svg>
+        <span data-i18n="projBack">Volver</span>
+      </a>
+
+      <div class="nav-sep"></div>
+
+      <button class="nav-toggle" id="lang-toggle" aria-label="Cambiar idioma">EN</button>
+      <button class="nav-toggle nav-toggle-icon" id="theme-toggle" aria-label="Cambiar tema">
+        <svg viewBox="0 0 12 12" aria-hidden="true">
+          <circle cx="6" cy="6" r="5" fill="none" stroke="currentColor" stroke-width="1.1"></circle>
+          <path d="M6 1 A5 5 0 0 1 6 11 Z" fill="currentColor"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════ HERO DE PROYECTO ═══════════════ -->
+<header class="proj-hero">
+  <div class="container">
+    <div class="section-eyebrow">
+      <span class="num">01</span>
+      <span class="line"></span>
+      <span data-i18n="projEyebrow">Caso de estudio</span>
+      <span class="meta">2026</span>
+    </div>
+
+    <div class="proj-title-row">
+      <h1 class="proj-title">Nullfast</h1>
+      <div class="case-tag-row">
+        <span class="case-tag">Android</span>
+        <span class="case-tag">Kotlin</span>
+        <span class="case-tag">Jetpack&nbsp;Compose</span>
+      </div>
+    </div>
+
+    <p class="proj-intro" data-i18n="projIntro">
+      Cuando practiqué ayuno intermitente no encontré ninguna app que me gustara: todas pedían cuenta, formularios de registro larguísimos u onboardings eternos. Así que construí una que encajara con lo que de verdad hace falta. Un temporizador, un histórico y poco más.
+    </p>
+  </div>
+</header>
+
+<!-- ═══════════════ CAPTURAS ═══════════════ -->
+<section class="section section-band">
+  <div class="container">
+    <div class="case-shots reveal-stagger">
+      <figure class="shot">
+        <img src="../../assets/nullfast-timer.png" alt="Nullfast — pantalla del temporizador de ayuno" loading="lazy">
+        <figcaption data-i18n="shot1">Temporizador</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../../assets/nullfast-history.png" alt="Nullfast — historial de ayunos" loading="lazy">
+        <figcaption data-i18n="shot2">Historial</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../../assets/nullfast-water.png" alt="Nullfast — registro de agua" loading="lazy">
+        <figcaption data-i18n="shot3">Agua</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="../../assets/nullfast-weight.png" alt="Nullfast — registro de peso" loading="lazy">
+        <figcaption data-i18n="shot4">Peso</figcaption>
+      </figure>
+    </div>
+
+    <div class="case-grid reveal-stagger">
+
+      <h3><span class="num">i.</span><span data-i18n="caseProblem">El problema</span></h3>
+      <div class="body">
+        <p data-i18n-html="caseProblemBody">
+          Quien ayuna no necesita una app que le venda planes premium ni que le obligue a registrarse para empezar. Necesita <strong>arrancar un temporizador en dos toques</strong> y que ese registro siga ahí dentro de un año. Las apps existentes mezclaban tracking, comunidad, coaching y muros de pago; cada interacción cargaba con peso ajeno al gesto que el usuario fue a hacer.
+        </p>
+      </div>
+
+      <h3><span class="num">ii.</span><span data-i18n="caseDecisions">Decisiones</span></h3>
+      <div class="body">
+        <ul class="decision-list">
+          <li><span class="k" data-i18n="kSpec">spec-first</span><span data-i18n="dec1">La especificación se escribió antes que el primer commit. Cada pantalla justifica su existencia por escrito.</span></li>
+          <li><span class="k" data-i18n="kPricing">modelo de pago</span><span data-i18n="dec2">Anuncios no invasivos y una compra única para quitarlos. Se paga una sola vez, sin suscripción ni cobros recurrentes.</span></li>
+          <li><span class="k" data-i18n="kData">datos</span><span data-i18n="dec3">Todo vive en el dispositivo. No hay backend, no hay cuenta, no hay sincronización en la nube. No hay, por tanto, incidente de datos posible.</span></li>
+          <li><span class="k" data-i18n="kPlatform">plataforma</span><span data-i18n="dec4">Nullfast es una app solo para Android. Construirla nativa, sin capa cross-platform, era lo natural: no había una segunda plataforma con la que compartir código.</span></li>
+        </ul>
+      </div>
+
+      <h3><span class="num">iii.</span><span data-i18n="caseOut">Fuera del alcance</span></h3>
+      <div class="body">
+        <ul class="out-list">
+          <li data-i18n="out1">Coaching y planes guiados</li>
+          <li data-i18n="out2">Comunidad y feed social</li>
+          <li data-i18n="out3">Suscripción mensual «premium»</li>
+          <li data-i18n="out4">Sincronización entre dispositivos</li>
+          <li data-i18n="out5">Integraciones con wearables</li>
+          <li data-i18n="out6">Recetas, planes nutricionales</li>
+        </ul>
+      </div>
+
+      <h3><span class="num">iv.</span><span data-i18n="caseResult">Resultado</span></h3>
+      <div class="body">
+        <p data-i18n-html="caseResultBody">
+          Vive en Google Play. Mantenida por una sola persona, sin servidor que pagar ni cuenta de usuario que migrar. El alcance acotado es lo que la hace sostenible: nada de la app requiere atención semanal para seguir funcionando el año que viene.
+        </p>
+        <a class="result-link" href="https://play.google.com/store/apps/details?id=com.velkyss.nullfast" target="_blank" rel="noopener">
+          <span data-i18n="caseResultCta">Ver en Play Store</span>
+          <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 9L9 3 M9 3H4 M9 3V8"></path></svg>
+        </a>
+      </div>
+    </div>
+
+    <blockquote class="pull-quote reveal">
+      <p data-i18n-html="casePullquote">
+        Lo que se decide <em>no</em> construir tiene tanto peso como lo que sí. Decir que no a la suscripción decidió la arquitectura: sin cuenta, sin servidor, sin atadura.
+      </p>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ═══════════════ VOLVER ═══════════════ -->
+<section class="section proj-foot-nav">
+  <div class="container">
+    <a class="proj-back-link reveal" href="../../">
+      <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M11 3L3 11 M3 11H9 M3 11V5"></path></svg>
+      <span data-i18n="projBackHome">Volver al inicio</span>
+    </a>
+  </div>
+</section>
+
+<!-- ═══════════════ FOOTER ═══════════════ -->
+<footer>
+  <div class="container">
+    <div class="foot-l">
+      <img src="../../assets/symbol-dark.svg" alt="">
+      <span>Velkyss · Ezequiel Marchena</span>
+    </div>
+    <div class="foot-r">
+      <span>velkyss.dev</span>
+      <span class="sep">·</span>
+      <span>© 2026</span>
+      <span class="sep">·</span>
+      <span data-i18n="footMade">Hecho en Sanlúcar de Barrameda</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../../strings.js"></script>
+<script src="../../i18n.js"></script>
+<script src="../../theme.js"></script>
+<script src="../../main.js"></script>
+</body>
+</html>

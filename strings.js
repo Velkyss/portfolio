@@ -1,18 +1,30 @@
 /* ════════════════════════════════════════════════════════════════
    velkyss.dev — cadenas de texto ES / EN
    El español es el idioma principal; el inglés, secundario.
+
+   Esquema de claves (sin duplicados):
+     nav*      → navegación (compartida por ambas páginas)
+     hero*     → hero de la home
+     card*     → tarjeta-resumen de Nullfast en la home
+     now*      → sección "en qué trabajo ahora" (home)
+     triplo* / ht*  → items de trayectoria (home)
+     method* / m* / stack*  → sección método (home)
+     contact*  → contacto (compartido)
+     foot*     → footer (compartido)
+     proj*     → marco de la página de proyecto (cabecera, intro, nav inferior)
+     case* / dec* / out* / k*  → cuerpo del caso de estudio (página de proyecto)
    ════════════════════════════════════════════════════════════════ */
 
 const strings = {
 
   es: {
-    /* ── Navegación ── */
+    /* ── Navegación (compartida) ── */
     navCase:    "Nullfast",
     navNow:     "ahora",
     navMethod:  "método",
     navContact: "contacto",
 
-    /* ── Hero ── */
+    /* ── Hero (home) ── */
     heroStatement:
       'Apps centradas en lo que importa.<br>' +
       '<span class="soft">Mi</span> <span class="underline">criterio</span> ' +
@@ -26,13 +38,89 @@ const strings = {
       'Sanlúcar de Barrameda · ES<br>' +
       'Activo desde 2019',
 
-    /* ── Caso de estudio: Nullfast ── */
-    caseLabel: "Caso de estudio",
-    caseLede:
-      'Una app de ayuno intermitente para Android. <em>Un temporizador que arranca ' +
-      'rápido, un historial que sobrevive al teléfono, y nada más.</em> Sin cuenta, ' +
-      'sin sincronización en la nube, sin suscripción mensual fingiendo ser un coach.',
+    /* ── Tarjeta-resumen de Nullfast (home) ── */
+    cardEyebrow:      "Caso de estudio · 2026",
+    cardSummary:
+      'App de ayuno intermitente para Android. Un temporizador que arranca rápido, ' +
+      'un historial que sobrevive al teléfono, y nada más. Sin cuenta, sin nube, sin suscripción.',
+    cardMetaScope:    "Una persona",
+    cardMetaPlatform: "Android · Compose",
+    cardMetaStatus:   "En Play Store",
+    cardCta:          "Ver el caso completo",
 
+    /* ── En qué trabajo ahora (home) ── */
+    nowLabel: "Trayectoria",
+    nowMeta:  "En desarrollo · 2026",
+    nowTitle: "En qué trabajo ahora",
+    nowIntro:
+      'Después de Nullfast, dos productos en desarrollo bajo la misma disciplina. ' +
+      'No son apps publicadas todavía; son hacia dónde va el trabajo.',
+    triploStatus: "En desarrollo",
+    triploDesc:
+      'App de planificación de viajes. Cada viaje activa solo los módulos que necesita: ' +
+      'equipaje, itinerario, reservas, presupuesto. El resto, fuera.',
+    htStatus: "En desarrollo",
+    htDesc:
+      'Suite de gestión doméstica para parejas. Datos compartidos entre dos personas y ' +
+      'entre Android e iOS, desde una sola base de código en Kotlin Multiplatform.',
+    nowClosing:
+      'Mismo principio que Nullfast: terminar cuando lo esencial funciona, no cuando se ' +
+      'agota la lista de funciones. No hay tarjetas vacías que rellenar aquí.',
+
+    /* ── Método + stack (home) ── */
+    methodLabel: "Método",
+    methodMeta:  "Cuatro decisiones · un stack",
+    methodTitle: "Cómo trabajo",
+    methodLede:
+      'Cuatro decisiones, no cuatro reglas. Lo que pienso antes de empezar cada app. ' +
+      'Y no siempre lo resuelvo de la misma manera.',
+    m1: '<strong>Decidir antes de construir.</strong> En Nullfast fue una spec escrita entera antes del primer commit. No siempre toma esa forma, pero la arquitectura nunca se improvisa.',
+    m2: '<strong>Nativo por defecto, cross-platform por decisión.</strong> Compose en Android, SwiftUI en iOS. Kotlin Multiplatform cuando hay dos plataformas que de verdad comparten lógica, como en HomeTogether.',
+    m3: '<strong>Offline-first cuando el producto lo permite.</strong> Si los datos pueden vivir en el dispositivo, viven ahí, y la app funciona sin conexión. Nullfast es el caso extremo: la red solo entra para comprobar la versión mínima. Otros productos dependen de ella, y entonces la sincronización se diseña desde el principio.',
+    m4: '<strong>El modelo sigue al producto.</strong> Cada decisión, desde la arquitectura hasta la monetización o qué entra y qué no, responde a lo que la app necesita ser, no a una moda ni a una plantilla.',
+    stackCleanArch: "Clean Architecture",
+    stackCross: "Cross",
+    stackTools: "Herramientas",
+
+    /* ── Contacto (compartido) ── */
+    contactLabel: "Contacto",
+    contactMeta:  "Respuesta en 48 h",
+    contactTitle: "La confianza se construye en los detalles.",
+    contactSub:
+      'Desarrollador Android e iOS. Producto propio en la Play Store. ' +
+      'Si buscas a alguien para tu equipo, escríbeme.',
+
+    /* ── Footer (compartido) ── */
+    footMade: "Hecho en Sanlúcar de Barrameda",
+
+    /* ════════════════════════════════════════════════════════
+       PÁGINA DE PROYECTO · /projects/nullfast/
+       ════════════════════════════════════════════════════════ */
+
+    /* ── Marco: cabecera y navegación ── */
+    projBack:     "Volver a Velkyss",
+    projEyebrow:  "Caso de estudio",
+    projDate:     "2026",
+    projRole:     "Diseño, desarrollo y publicación · una persona",
+    projIntro:
+      'Cuando practiqué ayuno intermitente no encontré ninguna app que me gustara: ' +
+      'todas pedían cuenta, formularios de registro larguísimos u onboardings eternos. ' +
+      'Así que construí una que encajara con lo que de verdad hace falta. Un temporizador, ' +
+      'un histórico y poco más.',
+
+    /* ── Marco: navegación inferior ── */
+    projNextLabel: "Siguiente proyecto",
+    projNextName:  "Triplo",
+    projNextNote:  "En desarrollo",
+    projBackHome:  "Volver al inicio",
+
+    /* ── Capturas (etiquetas de pie) ── */
+    shot1: "Temporizador",
+    shot2: "Historial",
+    shot3: "Agua",
+    shot4: "Peso",
+
+    /* ── Cuerpo del caso de estudio ── */
     caseProblem: "El problema",
     caseProblemBody:
       'Quien ayuna no necesita una app que le venda planes premium ni que le obligue ' +
@@ -67,63 +155,17 @@ const strings = {
     caseResultCta: "Ver en Play Store",
     casePullquote:
       'Lo que se decide <em>no</em> construir tiene tanto peso como lo que sí. ' +
-      'Decir que no a la suscripción decidió la arquitectura: sin cuenta, sin servidor, sin atadura.',
-
-    /* ── En qué trabajo ahora ── */
-    nowLabel: "Trayectoria",
-    nowMeta:  "En desarrollo · 2026",
-    nowTitle: "En qué trabajo ahora",
-    nowIntro:
-      'Después de Nullfast, dos productos en desarrollo bajo la misma disciplina. ' +
-      'No son apps publicadas todavía; son hacia dónde va el trabajo.',
-    triploStatus: "En desarrollo",
-    triploDesc:
-      'App de planificación de viajes. Cada viaje activa solo los módulos que necesita: ' +
-      'equipaje, itinerario, reservas, presupuesto. El resto, fuera.',
-    htStatus: "En desarrollo",
-    htDesc:
-      'Suite de gestión doméstica para parejas. Datos compartidos entre dos personas y ' +
-      'entre Android e iOS, desde una sola base de código en Kotlin Multiplatform.',
-    nowClosing:
-      'Mismo principio que Nullfast: terminar cuando lo esencial funciona, no cuando se ' +
-      'agota la lista de funciones. No hay tarjetas vacías que rellenar aquí. Cuando ' +
-      'estén listas para enseñarse, se enseñarán.',
-
-    /* ── Método + stack ── */
-    methodLabel: "Método",
-    methodMeta:  "Cuatro decisiones · un stack",
-    methodTitle: "Cómo trabajo",
-    methodLede:
-      'Cuatro decisiones, no cuatro reglas. Lo que pienso antes de empezar cada app. ' +
-      'Y no siempre lo resuelvo de la misma manera.',
-    m1: '<strong>Decidir antes de construir.</strong> En Nullfast fue una spec escrita entera antes del primer commit. No siempre toma esa forma, pero la arquitectura nunca se improvisa.',
-    m2: '<strong>Nativo por defecto, cross-platform por decisión.</strong> Compose en Android, SwiftUI en iOS. Kotlin Multiplatform cuando hay dos plataformas que de verdad comparten lógica, como en HomeTogether.',
-    m3: '<strong>Funcionar sin depender de un servidor, siempre que se pueda.</strong> Nullfast no toca la red. Cuando una app sí la necesita, la sincronización se diseña desde el principio, no se parchea al final.',
-    m4: '<strong>El modelo sigue al producto.</strong> Una compra única cuando no hay coste recurrente, como en Nullfast. Una suscripción cuando el producto se sostiene sobre infraestructura continua.',
-    stackCleanArch: "Clean Architecture",
-    stackCross: "Cross",
-    stackTools: "Herramientas",
-
-    /* ── Contacto ── */
-    contactLabel: "Contacto",
-    contactMeta:  "Respuesta en 48&nbsp;h",
-    contactTitle: "Hablemos de un proyecto pequeño<br>y bien definido.",
-    contactSub:
-      'Trabajo en remoto desde Sanlúcar de Barrameda con clientes en España y fuera. ' +
-      'No respondo a mensajes genéricos ni a propuestas vagas, pero sí, y rápido, a un correo concreto.',
-
-    /* ── Footer ── */
-    footMade: "Hecho en Sanlúcar de Barrameda"
+      'Decir que no a la suscripción decidió la arquitectura: sin cuenta, sin servidor, sin atadura.'
   },
 
   en: {
-    /* ── Navigation ── */
+    /* ── Navigation (shared) ── */
     navCase:    "Nullfast",
     navNow:     "now",
     navMethod:  "method",
     navContact: "contact",
 
-    /* ── Hero ── */
+    /* ── Hero (home) ── */
     heroStatement:
       'Apps focused on what matters.<br>' +
       '<span class="soft">My</span> <span class="underline">judgment</span> ' +
@@ -137,13 +179,88 @@ const strings = {
       'Sanlúcar de Barrameda · ES<br>' +
       'Shipping since 2019',
 
-    /* ── Case study: Nullfast ── */
-    caseLabel: "Case study",
-    caseLede:
-      'An intermittent-fasting app for Android. <em>A timer that starts fast, a history ' +
-      'that outlives the phone, and nothing else.</em> No account, no cloud sync, no ' +
-      'monthly subscription pretending to be a coach.',
+    /* ── Nullfast summary card (home) ── */
+    cardEyebrow:      "Case study · 2026",
+    cardSummary:
+      'An intermittent-fasting app for Android. A timer that starts fast, ' +
+      'a history that outlives the phone, and nothing else. No account, no cloud, no subscription.',
+    cardMetaScope:    "Solo build",
+    cardMetaPlatform: "Android · Compose",
+    cardMetaStatus:   "Live on Play",
+    cardCta:          "Read the full case",
 
+    /* ── What I'm working on now (home) ── */
+    nowLabel: "Trajectory",
+    nowMeta:  "In development · 2026",
+    nowTitle: "What I'm working on now",
+    nowIntro:
+      'After Nullfast, two products in development under the same discipline. ' +
+      'They\'re not shipped apps yet; they\'re where the work is heading.',
+    triploStatus: "In development",
+    triploDesc:
+      'A travel-planning app. Each trip switches on only the modules it needs: ' +
+      'packing, itinerary, reservations, budget. The rest stays out.',
+    htStatus: "In development",
+    htDesc:
+      'A home-management suite for couples. Data shared between two people and across ' +
+      'Android and iOS, from a single Kotlin Multiplatform codebase.',
+    nowClosing:
+      'Same principle as Nullfast: finish when the essential works, not when the feature ' +
+      'list runs out. There are no empty cards to fill in here.',
+
+    /* ── Method + stack (home) ── */
+    methodLabel: "Method",
+    methodMeta:  "Four decisions · one stack",
+    methodTitle: "How I work",
+    methodLede:
+      'Four decisions, not four rules. What I think through before starting each app. ' +
+      'And I don\'t always resolve it the same way.',
+    m1: '<strong>Decide before building.</strong> For Nullfast that was a full spec written before the first commit. It doesn\'t always take that form, but the architecture is never improvised.',
+    m2: '<strong>Native by default, cross-platform by decision.</strong> Compose on Android, SwiftUI on iOS. Kotlin Multiplatform when two platforms genuinely share logic, as in HomeTogether.',
+    m3: '<strong>Offline-first when the product allows it.</strong> If the data can live on the device, it lives there, and the app works with no connection. Nullfast is the extreme case: the network only comes in to check the minimum version. Other products depend on it, and then sync is designed from the start.',
+    m4: '<strong>The model follows the product.</strong> Every decision, from architecture to monetization to what goes in and what stays out, answers to what the app needs to be, not to a trend or a template.',
+    stackCleanArch: "Clean Architecture",
+    stackCross: "Cross",
+    stackTools: "Tooling",
+
+    /* ── Contact (shared) ── */
+    contactLabel: "Contact",
+    contactMeta:  "Reply within 48 h",
+    contactTitle: "Trust is built in the details.",
+    contactSub:
+      'Android & iOS developer. Shipped my own product to the Play Store. ' +
+      'If you\'re hiring for your team, get in touch.',
+
+    /* ── Footer (shared) ── */
+    footMade: "Built in Sanlúcar de Barrameda",
+
+    /* ════════════════════════════════════════════════════════
+       PROJECT PAGE · /projects/nullfast/
+       ════════════════════════════════════════════════════════ */
+
+    /* ── Frame: header and navigation ── */
+    projBack:     "Back to Velkyss",
+    projEyebrow:  "Case study",
+    projDate:     "2026",
+    projRole:     "Design, development and release · one person",
+    projIntro:
+      'When I was doing intermittent fasting I couldn\'t find an app I liked: ' +
+      'they all wanted an account, long sign-up forms, or endless onboarding. ' +
+      'So I built one that fit what you actually need. A timer, a history, and little else.',
+
+    /* ── Frame: bottom navigation ── */
+    projNextLabel: "Next project",
+    projNextName:  "Triplo",
+    projNextNote:  "In development",
+    projBackHome:  "Back to home",
+
+    /* ── Screenshots (captions) ── */
+    shot1: "Timer",
+    shot2: "History",
+    shot3: "Water",
+    shot4: "Weight",
+
+    /* ── Case study body ── */
     caseProblem: "The problem",
     caseProblemBody:
       'People who fast don\'t need an app selling premium plans, and they don\'t need ' +
@@ -178,53 +295,7 @@ const strings = {
     caseResultCta: "View on Play Store",
     casePullquote:
       'What you decide <em>not</em> to build weighs as much as what you do. ' +
-      'Saying no to the subscription decided the architecture: no account, no server, no lock-in.',
-
-    /* ── What I'm working on now ── */
-    nowLabel: "Trajectory",
-    nowMeta:  "In development · 2026",
-    nowTitle: "What I'm working on now",
-    nowIntro:
-      'After Nullfast, two products in development under the same discipline. ' +
-      'They\'re not shipped apps yet; they\'re where the work is heading.',
-    triploStatus: "In development",
-    triploDesc:
-      'A travel-planning app. Each trip switches on only the modules it needs: ' +
-      'packing, itinerary, reservations, budget. The rest stays out.',
-    htStatus: "In development",
-    htDesc:
-      'A home-management suite for couples. Data shared between two people and across ' +
-      'Android and iOS, from a single Kotlin Multiplatform codebase.',
-    nowClosing:
-      'Same principle as Nullfast: finish when the essential works, not when the feature ' +
-      'list runs out. There are no empty cards to fill in here. When they\'re ready to ' +
-      'be shown, they\'ll be shown.',
-
-    /* ── Method + stack ── */
-    methodLabel: "Method",
-    methodMeta:  "Four decisions · one stack",
-    methodTitle: "How I work",
-    methodLede:
-      'Four decisions, not four rules. What I think through before starting each app. ' +
-      'And I don\'t always resolve it the same way.',
-    m1: '<strong>Decide before building.</strong> For Nullfast that was a full spec written before the first commit. It doesn\'t always take that form, but the architecture is never improvised.',
-    m2: '<strong>Native by default, cross-platform by decision.</strong> Compose on Android, SwiftUI on iOS. Kotlin Multiplatform when two platforms genuinely share logic, as in HomeTogether.',
-    m3: '<strong>Run without depending on a server, whenever possible.</strong> Nullfast never touches the network. When an app does need it, sync is designed from the start, not patched on at the end.',
-    m4: '<strong>The model follows the product.</strong> A one-time payment when there\'s no recurring cost, as in Nullfast. A subscription when the product runs on continuous infrastructure.',
-    stackCleanArch: "Clean Architecture",
-    stackCross: "Cross",
-    stackTools: "Tooling",
-
-    /* ── Contact ── */
-    contactLabel: "Contact",
-    contactMeta:  "Reply within 48&nbsp;h",
-    contactTitle: "Let's talk about a small,<br>well-scoped project.",
-    contactSub:
-      'I work remotely from Sanlúcar de Barrameda, with clients in Spain and beyond. ' +
-      'I don\'t reply to generic messages or vague pitches, but I do, and quickly, to a concrete email.',
-
-    /* ── Footer ── */
-    footMade: "Built in Sanlúcar de Barrameda"
+      'Saying no to the subscription decided the architecture: no account, no server, no lock-in.'
   }
 
 };
