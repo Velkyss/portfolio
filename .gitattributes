@@ -1,0 +1,8 @@
+# Los HTML DEBEN quedarse en LF.
+# Los hashes SHA-256 de la Content-Security-Policy (ver /_headers) se
+# calcularon sobre el contenido inline byte a byte en LF. Si git convirtiera
+# estos archivos a CRLF, los bytes servidos cambiarían y los hashes dejarían
+# de coincidir -> el navegador bloquearía esos bloques inline (JSON-LD, el
+# <style> y el <script> de nullfast/privacy.html). Este atributo lo impide,
+# sin depender de core.autocrlf de cada máquina.
+*.html text eol=lf
