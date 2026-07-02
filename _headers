@@ -1,0 +1,47 @@
+# ════════════════════════════════════════════════════════════════════════
+#  velkyss.dev — Cabeceras de seguridad HTTP (Cloudflare Pages)
+#  Cloudflare Pages lee este archivo en cada build. Sintaxis:
+#    · una regla de ruta por bloque (p. ej. /*)
+#    · una cabecera por línea, indentada con 2 espacios
+#    · líneas que empiezan por # son comentarios
+#
+#  La CSP va en modo Report-Only: NO bloquea nada, solo reporta en consola
+#  los recursos que la violarían. Cuando confirmemos por la consola que no
+#  hay falsos positivos, se renombra el header a "Content-Security-Policy"
+#  (sin -Report-Only) para que empiece a bloquear de verdad.
+#
+#  ── Hashes SHA-256 de los bloques inline (recalcular si se edita el bloque)
+#     Un hash cubre el contenido EXACTO byte a byte entre las etiquetas.
+#     Si tocas una coma, un espacio o un salto de línea del bloque, el hash
+#     cambia y hay que regenerarlo o el navegador bloqueará ese bloque.
+#
+#     script-src:
+#       sha256-SIkPdKjyxEiwsSg+UWM1+2Bgkhn84Z3uYiry1oou7q8=
+#         → <script type="application/ld+json"> de  /index.html  (JSON-LD Person)
+#       sha256-XkFOy19iKfFYtUVz8jwdklSPZf7wB7mPok0FoFlY3j0=
+#         → <script type="application/ld+json"> de  /projects/nullfast/index.html  (JSON-LD CreativeWork)
+#       sha256-aJvwCd8wnXsIEA6yPhukZrsdxgf8PK6aWIuMRJXaZEM=
+#         → <script> inline con la función setLang() de  /nullfast/privacy.html
+#       'unsafe-hashes' + los dos siguientes cubren los manejadores onclick="" de privacy.html:
+#       sha256-nfpDbYjz4eCBM+4ZOob/oq/AhNIJSiOab5Z3PmV3WQ8=
+#         → onclick="setLang('es')"  (botón "Español")
+#       sha256-tQ7AJlDDZqMCHb1qhGAkrv57jT+SrZKow7CLztcgh9g=
+#         → onclick="setLang('en')"  (botón "English")
+#
+#     style-src:
+#       sha256-TeKQhLsCJSwhAWmUr4gDigtuSFW0BQVigjEt7DuJ6vQ=
+#         → bloque <style> incrustado en el <head> de  /nullfast/privacy.html
+#
+#  Nota: los <script type="application/ld+json"> son "data blocks" y, según
+#  la especificación CSP3, no los gobierna script-src (no se ejecutan como JS).
+#  Sus hashes se incluyen como defensa en profundidad para no depender de esa
+#  interpretación; son inofensivos si el navegador no los exige.
+# ════════════════════════════════════════════════════════════════════════
+
+/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), camera=(), microphone=()
+  Content-Security-Policy-Report-Only: default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'self'; form-action 'self'; img-src 'self' data:; font-src https://fonts.gstatic.com; style-src 'self' https://fonts.googleapis.com 'sha256-TeKQhLsCJSwhAWmUr4gDigtuSFW0BQVigjEt7DuJ6vQ='; script-src 'self' 'sha256-SIkPdKjyxEiwsSg+UWM1+2Bgkhn84Z3uYiry1oou7q8=' 'sha256-XkFOy19iKfFYtUVz8jwdklSPZf7wB7mPok0FoFlY3j0=' 'sha256-aJvwCd8wnXsIEA6yPhukZrsdxgf8PK6aWIuMRJXaZEM=' 'unsafe-hashes' 'sha256-nfpDbYjz4eCBM+4ZOob/oq/AhNIJSiOab5Z3PmV3WQ8=' 'sha256-tQ7AJlDDZqMCHb1qhGAkrv57jT+SrZKow7CLztcgh9g='
