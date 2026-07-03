@@ -835,6 +835,36 @@ nav.top.scrolled .container { height: 52px; }
   color: var(--fog-faint);
 }
 
+/* ─── descarga de CV ──────────────────────────────────────────────── */
+.cv-download {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-top: 56px;
+}
+/* El CTA primario reutiliza .result-link; solo se neutraliza su margen
+   superior, pensado para el cuerpo del caso, dentro de este contenedor. */
+.cv-download .result-link { margin-top: 0; }
+
+.cv-alt {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  color: var(--fog-mute);
+  transition: color .15s ease;
+}
+.cv-alt:hover { color: var(--accent-hi); }
+.cv-alt__arrow {
+  color: inherit;
+  opacity: 0.6;
+  transition: transform .25s ease, opacity .15s ease;
+}
+.cv-alt:hover .cv-alt__arrow { transform: translateY(2px); opacity: 1; }
+
 /* ─── footer ──────────────────────────────────────────────────────── */
 footer {
   border-top: 1px solid var(--line);

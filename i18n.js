@@ -9,6 +9,25 @@
   const STORAGE_KEY = "velkyss-lang";
   let currentLang;
 
+  // Descarga de CV: el idioma activo es el primario; el otro, el secundario.
+  // Solo dueña href + download; el texto visible lo maneja el swap data-i18n.
+  const CV_FILES = {
+    es: { href: "/cv/Ezequiel-Marchena-CV-ES.pdf", name: "Ezequiel-Marchena-CV-ES.pdf" },
+    en: { href: "/cv/Ezequiel-Marchena-CV-EN.pdf", name: "Ezequiel-Marchena-CV-EN.pdf" }
+  };
+
+  function applyCvLinks(lang) {
+    const other = lang === "es" ? "en" : "es";
+    document.querySelectorAll('[data-cv="primary"]').forEach(function (el) {
+      el.href = CV_FILES[lang].href;
+      el.download = CV_FILES[lang].name;
+    });
+    document.querySelectorAll('[data-cv="secondary"]').forEach(function (el) {
+      el.href = CV_FILES[other].href;
+      el.download = CV_FILES[other].name;
+    });
+  }
+
   function applyLanguage(lang) {
     if (!strings[lang]) lang = "es";
     currentLang = lang;
@@ -26,6 +45,8 @@
       const value = dict[el.getAttribute("data-i18n-html")];
       if (value !== undefined) el.innerHTML = value;
     });
+
+    applyCvLinks(lang);
 
     // El botón muestra el idioma al que se cambiará, no el actual.
     const toggle = document.getElementById("lang-toggle");

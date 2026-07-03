@@ -89,6 +89,8 @@ const strings = {
     contactSub:
       'Desarrollador Android e iOS. Producto propio en la Play Store. ' +
       'Si buscas a alguien para tu equipo, escríbeme.',
+    cvDownload: "Descargar CV",
+    cvOther:    "Versión en inglés",
 
     /* ════════════════════════════════════════════════════════
        PÁGINA DE PROYECTO · /projects/nullfast/
@@ -227,6 +229,8 @@ const strings = {
     contactSub:
       'Android & iOS developer. Shipped my own product to the Play Store. ' +
       'If you\'re hiring for your team, get in touch.',
+    cvDownload: "Download CV",
+    cvOther:    "Spanish version",
 
     /* ════════════════════════════════════════════════════════
        PROJECT PAGE · /projects/nullfast/
