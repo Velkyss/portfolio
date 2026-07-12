@@ -1,7 +1,6 @@
 /* ════════════════════════════════════════════════════════════════
-   velkyss.dev — v4 «Especificación»
-   Rail de changelog + lenguaje arquitectónico (rosetón, gilt,
-   teselas, corbeles) + Ember = decisión. Tokens de marca.
+   velkyss.dev — EXPERIMENTO de diseño «Especificación»
+   Rail de changelog + Ember = decisión. Reutiliza tokens de marca.
    ════════════════════════════════════════════════════════════════ */
 
 :root {
@@ -437,11 +436,8 @@ nav.top.scrolled .container { height: 54px; }
   font-family: var(--font-mono);
   font-size: 11px;
   letter-spacing: 0.06em;
-  line-height: 1.75;
   color: var(--fog-faint);
 }
-/* el separador · solo existe en la variante móvil de una línea */
-.sec-meta .msep { display: none; }
 
 .sec-body { padding-left: var(--rail-gap); min-width: 0; }
 
@@ -918,8 +914,6 @@ footer .container {
   .sec-rail::before { display: none; }
   .sec-rail::after { right: auto; left: 0; top: 3px; }
   .sec-meta { display: inline-block; margin-top: 0; margin-left: 14px; }
-  .sec-meta br { display: none; }     /* en línea: sin salto, con separador */
-  .sec-meta .msep { display: inline; }
   .sec-body { padding-left: 0; }
 
   .case-card { grid-template-columns: 1fr; gap: 30px; padding-bottom: 34px; }

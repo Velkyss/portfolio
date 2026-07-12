@@ -31,8 +31,7 @@ const strings = {
       '<span class="soft">está en lo que decido</span> no <span class="soft">construir</span>.',
     heroMetaL:
       '<strong>Velkyss</strong> es el nombre con el que firmo el trabajo.<br>' +
-      'Detrás hay una persona escribiendo código nativo<br>' +
-      'para Android e iOS.',
+      'Detrás hay una persona escribiendo código nativo para Android e iOS.',
     heroMetaR:
       '<span class="who">Ezequiel Marchena</span><br>' +
       'Sanlúcar de Barrameda · ES<br>' +
@@ -50,7 +49,7 @@ const strings = {
 
     /* ── En qué trabajo ahora (home) ── */
     nowLabel: "Trayectoria",
-    nowMeta:  "En desarrollo · 2026",
+    nowMeta:  'En desarrollo <br><span class="msep">· </span>2026',
     nowTitle: "En qué trabajo ahora",
     nowIntro:
       'Después de Nullfast, dos productos en desarrollo bajo la misma disciplina. ' +
@@ -69,7 +68,7 @@ const strings = {
 
     /* ── Método + stack (home) ── */
     methodLabel: "Método",
-    methodMeta:  "Cuatro decisiones · un stack",
+    methodMeta:  '4 decisiones <br><span class="msep">· </span>un stack',
     methodTitle: "Cómo trabajo",
     methodLede:
       'Cuatro decisiones, no cuatro reglas. Lo que pienso antes de empezar cada app. ' +
@@ -84,7 +83,7 @@ const strings = {
 
     /* ── Contacto (compartido) ── */
     contactLabel: "Contacto",
-    contactMeta:  "Respuesta en 48 h",
+    contactMeta:  'Respuesta <br>en 48 h',
     contactTitle: "La confianza se construye en los detalles.",
     contactSub:
       'Desarrollador Android e iOS. Producto propio en la Play Store. ' +
@@ -114,6 +113,7 @@ const strings = {
     projBackHome:  "Volver al inicio",
 
     /* ── Capturas (etiquetas de pie) ── */
+    shotsLabel: "Pantallas",
     shot1: "Temporizador",
     shot2: "Historial",
     shot3: "Agua",
@@ -171,8 +171,7 @@ const strings = {
       '<span class="soft">lives in what I decide</span> not <span class="soft">to build</span>.',
     heroMetaL:
       '<strong>Velkyss</strong> is the name on the work.<br>' +
-      'Behind it, one person writing native code<br>' +
-      'for Android and iOS.',
+      'Behind it, one person writing native code for Android and iOS.',
     heroMetaR:
       '<span class="who">Ezequiel Marchena</span><br>' +
       'Sanlúcar de Barrameda · ES<br>' +
@@ -190,7 +189,7 @@ const strings = {
 
     /* ── What I'm working on now (home) ── */
     nowLabel: "Trajectory",
-    nowMeta:  "In development · 2026",
+    nowMeta:  'In development <br><span class="msep">· </span>2026',
     nowTitle: "What I'm working on now",
     nowIntro:
       'After Nullfast, two products in development under the same discipline. ' +
@@ -209,7 +208,7 @@ const strings = {
 
     /* ── Method + stack (home) ── */
     methodLabel: "Method",
-    methodMeta:  "Four decisions · one stack",
+    methodMeta:  '4 decisions <br><span class="msep">· </span>one stack',
     methodTitle: "How I work",
     methodLede:
       'Four decisions, not four rules. What I think through before starting each app. ' +
@@ -224,7 +223,7 @@ const strings = {
 
     /* ── Contact (shared) ── */
     contactLabel: "Contact",
-    contactMeta:  "Reply within 48 h",
+    contactMeta:  'Reply <br>within 48 h',
     contactTitle: "Trust is built in the details.",
     contactSub:
       'Android & iOS developer. Shipped my own product to the Play Store. ' +
@@ -253,6 +252,7 @@ const strings = {
     projBackHome:  "Back to home",
 
     /* ── Screenshots (captions) ── */
+    shotsLabel: "Screens",
     shot1: "Timer",
     shot2: "History",
     shot3: "Water",
