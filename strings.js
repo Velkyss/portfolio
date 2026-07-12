@@ -28,7 +28,7 @@ const strings = {
     heroStatement:
       'Apps centradas en lo que importa.<br>' +
       '<span class="soft">Mi</span> <span class="underline">criterio</span> ' +
-      '<span class="soft">está en lo que decido</span> no <span class="soft">construir</span>.',
+      '<span class="soft">está en lo que</span> decido <span class="soft">no construir</span>.',
     heroMetaL:
       '<strong>Velkyss</strong> es el nombre con el que firmo el trabajo.<br>' +
       'Detrás hay una persona escribiendo código nativo para Android e iOS.',
@@ -168,7 +168,7 @@ const strings = {
     heroStatement:
       'Apps focused on what matters.<br>' +
       '<span class="soft">My</span> <span class="underline">judgment</span> ' +
-      '<span class="soft">lives in what I decide</span> not <span class="soft">to build</span>.',
+      '<span class="soft">lives in what I</span> decide <span class="soft">not to build</span>.',
     heroMetaL:
       '<strong>Velkyss</strong> is the name on the work.<br>' +
       'Behind it, one person writing native code for Android and iOS.',
