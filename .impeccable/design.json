@@ -1,0 +1,156 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-07-24T00:00:00Z",
+  "title": "Design System: velkyss.dev",
+  "extensions": {
+    "colorMeta": {
+      "ember": {
+        "role": "primary",
+        "displayName": "Ember",
+        "canonical": "#C84A18",
+        "tonalRamp": ["#2b1006", "#4a1c0b", "#6b2810", "#8c3514", "#a83f17", "#C84A18", "#e0662f", "#f0946a"]
+      },
+      "ember-bright": {
+        "role": "primary",
+        "displayName": "Ember Bright",
+        "canonical": "#E5622E",
+        "tonalRamp": ["#301207", "#521e0c", "#742a11", "#963616", "#c04d21", "#E5622E", "#ef8a5f", "#f7b598"]
+      },
+      "byzantine-gilt": {
+        "role": "secondary",
+        "displayName": "Byzantine Gilt",
+        "canonical": "#A9854D",
+        "tonalRamp": ["#241c10", "#3d2f1b", "#574427", "#725a33", "#8e7040", "#A9854D", "#c3a473", "#dcc7a3"]
+      },
+      "basalt": {
+        "role": "neutral",
+        "displayName": "Basalt",
+        "canonical": "#0E0D0D",
+        "tonalRamp": ["#0E0D0D", "#111010", "#161514", "#1C1B19", "#2a2825", "#403d39", "#5e5b57", "#807d78"]
+      },
+      "ash": {
+        "role": "neutral",
+        "displayName": "Ash",
+        "canonical": "#F5F4F0",
+        "tonalRamp": ["#4A4744", "#605d59", "#807D78", "#9c9992", "#BFBCB6", "#d6d3ce", "#e8e6e2", "#F5F4F0"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Monumental Syne 800 statements: hero line, section titles, Nullfast card name, project title, contact title." },
+      "title": { "displayName": "Title", "purpose": "Mid-level Syne 700 headings: trajectory names, case-part h3, pull-quote." },
+      "body": { "displayName": "Body", "purpose": "DM Sans Light 300 ledes and paragraphs; measure capped 54-62ch." },
+      "label": { "displayName": "Label", "purpose": "DM Mono uppercase inscription voice: rail field names, decision keys, screenshot captions. Almost always Gilt." },
+      "mono": { "displayName": "Mono", "purpose": "DM Mono normal-case annotation voice: nav links, meta, stack table, status tablets, CTA links, footer." }
+    },
+    "shadows": [
+      { "name": "hearth-glow", "value": "0 0 20px 3px color-mix(in oklab, #C84A18 55%, transparent)", "purpose": "The self-emitting glow of the Ember oculus at the rosette center. The ONLY shadow in the system; it is emitted light, not shade. Breathes to 0 0 10px 1px 28% via ember-breathe (4.5s)." }
+    ],
+    "motion": [
+      { "name": "ease-signature", "value": "cubic-bezier(0.16, 1, 0.3, 1)", "purpose": "The single governing easing for reveals, hovers, underline wipes, arrow translations, and view transitions." },
+      { "name": "ease-fade", "value": "ease", "purpose": "Plain fade-in for hero stamp, spec fields, and rosette entrance." },
+      { "name": "dur-reveal", "value": "0.8s", "purpose": "Reveal-on-scroll opacity/transform duration (.7s for staggered children)." },
+      { "name": "dur-theme", "value": "0.4s", "purpose": "Background/color crossfade on theme change." },
+      { "name": "ember-breathe", "value": "4.5s ease-in-out infinite", "purpose": "The hearth oculus opacity + glow pulse; the system's only looping animation." }
+    ],
+    "breakpoints": [
+      { "name": "fold", "value": "900px", "purpose": "The single breakpoint. Below it the spec rail folds inline, desktop nav becomes a hamburger sheet, and multi-column grids collapse." }
+    ]
+  },
+  "components": [
+    {
+      "name": "Status Tablet",
+      "kind": "chip",
+      "refersTo": "status-tablet",
+      "description": "Inscribed, non-interactive state marker (Live on Play / In development). Carved plate: live corners, Ember stroke.",
+      "html": "<span class=\"ds-status-tablet\">Live on Play</span>",
+      "css": ".ds-status-tablet { display: inline-block; font-family: 'DM Mono', ui-monospace, monospace; font-size: 11px; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; color: #C84A18; background: transparent; border: 1px solid color-mix(in oklab, #C84A18 35%, transparent); border-radius: 0; padding: 4px 9px; }"
+    },
+    {
+      "name": "CTA Link",
+      "kind": "button",
+      "refersTo": "cta-link",
+      "description": "The system's only action affordance: a mono text link in Ember with an underline that follows to Ember Bright on hover. No filled buttons exist.",
+      "html": "<a class=\"ds-cta-link\" href=\"#\">View on Play Store<svg viewBox=\"0 0 12 12\" width=\"12\" height=\"12\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\"><path d=\"M2 10L10 2M4 2h6v6\"/></svg></a>",
+      "css": ".ds-cta-link { display: inline-flex; align-items: center; gap: 10px; font-family: 'DM Mono', ui-monospace, monospace; font-size: 13px; letter-spacing: 0.04em; color: #C84A18; border-bottom: 1px solid color-mix(in oklab, #C84A18 40%, transparent); padding-bottom: 3px; text-decoration: none; transition: color .15s, border-color .15s; } .ds-cta-link:hover { color: #E5622E; border-color: #E5622E; } .ds-cta-link:focus-visible { outline: 2px solid #E5622E; outline-offset: 3px; }"
+    },
+    {
+      "name": "Nav Toggle",
+      "kind": "button",
+      "refersTo": "nav-toggle",
+      "description": "Incidental control (language/theme). The one place a soft 6px corner is permitted.",
+      "html": "<button class=\"ds-nav-toggle\">ES</button>",
+      "css": ".ds-nav-toggle { font-family: 'DM Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; color: #807D78; background: transparent; border: 1px solid rgba(245,244,240,0.12); border-radius: 6px; padding: 6px 9px; cursor: pointer; display: inline-flex; align-items: center; transition: color .15s, border-color .15s; } .ds-nav-toggle:hover { color: #F5F4F0; border-color: #807D78; } .ds-nav-toggle:focus-visible { outline: 2px solid #E5622E; outline-offset: 3px; }"
+    },
+    {
+      "name": "Nav Link",
+      "kind": "nav",
+      "refersTo": null,
+      "description": "Top-nav link with an Ember underline that wipes in left-to-right on hover as text lifts from Ash-Mute to Ash.",
+      "html": "<a class=\"ds-nav-link\" href=\"#\">method</a>",
+      "css": ".ds-nav-link { position: relative; font-family: 'DM Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.02em; color: #807D78; padding: 8px 11px; text-decoration: none; transition: color .2s ease; } .ds-nav-link::after { content: ''; position: absolute; left: 11px; right: 11px; bottom: 5px; height: 1px; background: #C84A18; transform: scaleX(0); transform-origin: left center; transition: transform .35s cubic-bezier(0.16,1,0.3,1); } .ds-nav-link:hover { color: #F5F4F0; } .ds-nav-link:hover::after { transform: scaleX(1); }"
+    },
+    {
+      "name": "Case Card",
+      "kind": "card",
+      "refersTo": null,
+      "description": "Rule-defined case card: no fill, no shadow, radius 0. Bottom border and name shift on hover — tone moves, nothing lifts.",
+      "html": "<div class=\"ds-case-card\"><span class=\"ds-case-name\">Nullfast</span><p class=\"ds-case-sum\">A timer that starts fast, a history that outlives the phone, and nothing else.</p><a class=\"ds-case-cta\" href=\"#\">Read the full case &rarr;</a></div>",
+      "css": ".ds-case-card { display: block; background: transparent; border: none; border-bottom: 1px solid rgba(245,244,240,0.12); border-radius: 0; padding: 8px 0 44px; transition: border-color .3s ease; } .ds-case-card:hover { border-color: #4A4744; } .ds-case-name { display: block; font-family: 'Syne', system-ui, sans-serif; font-weight: 800; font-size: 64px; letter-spacing: -0.045em; line-height: 0.92; color: #F5F4F0; margin-bottom: 26px; transition: color .25s ease; } .ds-case-card:hover .ds-case-name { color: #E5622E; } .ds-case-sum { font-family: 'DM Sans', system-ui, sans-serif; font-weight: 300; font-size: 17px; line-height: 1.6; color: #BFBCB6; max-width: 54ch; margin-bottom: 34px; } .ds-case-cta { font-family: 'DM Mono', ui-monospace, monospace; font-size: 13px; letter-spacing: 0.04em; color: #C84A18; text-decoration: none; }"
+    },
+    {
+      "name": "Rail Label",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "The signature margin-rail identity: Gilt uppercase field, mono meta, a 1px vertical rule, and an Ember diamond changelog node with a horizontal capital.",
+      "html": "<div class=\"ds-rail\"><span class=\"ds-rail-field\">Method</span><span class=\"ds-rail-meta\">4 decisions &middot; one stack</span></div>",
+      "css": ".ds-rail { position: relative; border-right: 1px solid rgba(245,244,240,0.12); padding: 4px 48px 0 0; text-align: right; min-height: 60px; } .ds-rail::after { content: ''; position: absolute; right: -4.5px; top: 6px; width: 8px; height: 8px; background: #C84A18; transform: rotate(45deg); } .ds-rail::before { content: ''; position: absolute; right: -11px; top: -1px; width: 22px; height: 1px; background: rgba(245,244,240,0.12); } .ds-rail-field { display: block; font-family: 'DM Mono', ui-monospace, monospace; font-size: 11.5px; letter-spacing: 0.12em; text-transform: uppercase; color: #A9854D; } .ds-rail-meta { display: block; margin-top: 8px; font-family: 'DM Mono', ui-monospace, monospace; font-size: 11px; letter-spacing: 0.06em; line-height: 1.75; color: #4A4744; }"
+    },
+    {
+      "name": "Rosette",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "The signature CSS-only rose window with a breathing Ember hearth oculus. The emotional center of the identity; pure gradients and masks, no image.",
+      "html": "<div class=\"ds-rose\"><span></span></div>",
+      "css": ".ds-rose { position: relative; width: 110px; height: 110px; border: 1px solid rgba(245,244,240,0.12); border-radius: 50%; background: radial-gradient(circle closest-side, transparent 0 86%, rgba(245,244,240,0.12) 87% 88%, transparent 89%); } .ds-rose::before { content: ''; position: absolute; inset: 0; border-radius: 50%; background: repeating-conic-gradient(rgba(245,244,240,0.12) 0 1.3deg, transparent 1.3deg 22.5deg); -webkit-mask: radial-gradient(circle closest-side, transparent 0 61%, #000 62%); mask: radial-gradient(circle closest-side, transparent 0 61%, #000 62%); } .ds-rose::after { content: ''; position: absolute; inset: 19px; border: 1px solid color-mix(in oklab, #A9854D 70%, transparent); border-radius: 50%; background: repeating-conic-gradient(from 22.5deg, rgba(245,244,240,0.07) 0 2deg, transparent 2deg 45deg); -webkit-mask: radial-gradient(circle closest-side, transparent 0 50%, #000 51%); mask: radial-gradient(circle closest-side, transparent 0 50%, #000 51%); } .ds-rose > span { position: absolute; left: 50%; top: 50%; width: 9px; height: 9px; margin: -4.5px 0 0 -4.5px; background: #C84A18; transform: rotate(45deg); animation: ds-ember-breathe 4.5s ease-in-out infinite; } @keyframes ds-ember-breathe { 0%,100% { opacity: 1; box-shadow: 0 0 20px 3px color-mix(in oklab, #C84A18 55%, transparent); } 50% { opacity: .65; box-shadow: 0 0 10px 1px color-mix(in oklab, #C84A18 28%, transparent); } }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Carved Specification",
+    "overview": "velkyss.dev reads like an engineering specification that has been carved into stone. Two disciplines are fused: the rigor of a technical document (a changelog rail down the left margin, monospace field labels, roman-numeral part markers, spec-stamp headers) and the permanence of sacred architecture (a rosette window, Byzantine gilt inscriptions, tessera dot-fields, Khmer corbel thresholds). The thesis of the portfolio ('judgment lives in what I decide not to build') is expressed materially: nothing is elevated or decorated for effect; every mark is inscribed, justified, load-bearing. The system is dark by brand default (warm near-black basalt), monumentally typeset in Syne, and annotated everywhere in DM Mono. Color is almost absent, so the one warm color, Ember, lands as an event: it is the color of decision and appears only where a decision was made. Motion is ritual, not decorative: a single cubic-bezier governs almost everything, content reveals once and holds still, and the only self-emitting light is the slow ember-breathe glow of the hearth oculus.",
+    "keyCharacteristics": [
+      "Spec-document scaffolding (margin rail, mono labels, roman numerals, field stamps) as the primary structure.",
+      "Sacred-architecture ornament (rosette, gilt, tesserae, corbels) rendered in pure CSS, never as images.",
+      "Flat by doctrine: depth is tonal and hairline, never shadow.",
+      "Ember as a rationed event color — decision made visible.",
+      "Warm neutrals (basalt/ash), never pure black or gray.",
+      "Live corners (radius-0) on anything carved; small radii only on incidental controls."
+    ],
+    "rules": [
+      { "name": "The Decision Rule", "body": "Ember means a decision was made. It appears only on choices (the criterio underline, rail nodes, active status, CTAs) and never as a background fill or large area. Its rarity is the argument.", "section": "colors" },
+      { "name": "The Two Metals Rule", "body": "Gilt inscribes, Ember decides. Gilt is never interactive and Ember is never a passive label. If an element catalogues it is Gilt; if it asserts a choice or action it is Ember. They never trade jobs.", "section": "colors" },
+      { "name": "The Warm-Neutral Rule", "body": "No pure black, white, or neutral gray. Every neutral carries warmth (basalt/ash); the stone is never cold.", "section": "colors" },
+      { "name": "The Annotation Rule", "body": "Anything that is metadata, a label, a status, a key, a caption, or a call-to-action is DM Mono. Prose and headings are never mono; annotations are never Syne or DM Sans. The mono/serif split is the spec metaphor.", "section": "typography" },
+      { "name": "The Light-Body Rule", "body": "Body copy is DM Sans Light (300). Weight is added only to pull a single term to Ash (500); emphasis is by tone and weight, never italic or color alone.", "section": "typography" },
+      { "name": "The Rail Rule", "body": "The 164px margin-rail is the signature. New sections use the two-column grid and put their identity (Gilt label + mono meta + Ember node) in the rail, never inline with the body.", "section": "layout" },
+      { "name": "The No-Shadow Rule", "body": "UI elements cast no shadow. If something needs to feel distinct, change its tonal surface (basalt step) or add a hairline. The single glow is reserved for the Ember hearth.", "section": "elevation" },
+      { "name": "The Carved-Corner Rule", "body": "Content artifacts (tablets, cards, frames, bands) have radius 0. Only throwaway controls get a small radius. Radius signals 'incidental UI'; its absence signals 'part of the record'.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do put every section's identity (Gilt label + mono meta + Ember diamond node) in the 164px rail; let it fold to an inline row below 900px.",
+      "Do ration Ember to decisions and actions only, kept well under ~10% of any screen.",
+      "Do keep Gilt strictly to inscriptions (labels, numerals, keys, captions) and never make it clickable.",
+      "Do render ornament (rosettes, tesserae, corbels) in pure CSS gradients/masks, never as images.",
+      "Do use radius 0 for anything carved; reserve 6px only for incidental controls.",
+      "Do convey depth with tonal basalt steps and 1px hairlines; keep the single cubic-bezier(0.16, 1, 0.3, 1) easing.",
+      "Do use tokens (--accent, --gilt, --ink*, --fog*), never raw hex, and keep both light and dark themes working through the variable remap."
+    ],
+    "donts": [
+      "Don't introduce a filled/pill button, a gradient CTA, or a rounded-everything control — the portfolio's whole point is refusal of that pattern.",
+      "Don't add drop shadows or card elevation; the only glow belongs to the Ember hearth.",
+      "Don't use pure black, pure white, or neutral gray — every neutral is warm (basalt/ash).",
+      "Don't set labels/status/CTAs in Syne or DM Sans, or set prose/headings in DM Mono — the mono/serif split is the spec metaphor.",
+      "Don't let Ember and Gilt trade jobs (Gilt is never action, Ember is never a passive label).",
+      "Don't inflate: present in-development apps as in-development, and cite only real, dated metrics."
+    ]
+  }
+}

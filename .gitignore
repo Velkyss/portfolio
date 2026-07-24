@@ -1,0 +1,6 @@
+# Claude Code / tooling — no forma parte del sitio (Cloudflare Pages sirve todo el repo)
+.claude/
+
+# Impeccable: local y cachés (se conserva design.json)
+.impeccable/config.local.json
+.impeccable/hook.cache.json
