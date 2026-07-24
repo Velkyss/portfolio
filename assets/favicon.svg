@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 30">
+  <style>
+    .mass { fill: url(#massDark); }
+    @media (prefers-color-scheme: light) { .mass { fill: url(#massLight); } }
+  </style>
+  <defs>
+    <radialGradient id="massDark" cx="16" cy="11.6" r="17" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F1F0EB"/><stop offset="0.5" stop-color="#C9C6C0"/><stop offset="1" stop-color="#9C9992"/>
+    </radialGradient>
+    <radialGradient id="massLight" cx="16" cy="11.6" r="17" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#4A4744"/><stop offset="0.5" stop-color="#26251F"/><stop offset="1" stop-color="#121110"/>
+    </radialGradient>
+  </defs>
+  <path class="mass" d="M3 4.5 L29 4.5 L16 26 Z"/>
+  <path d="M4.3 4.5 L27.7 4.5" stroke="#C84A18" stroke-width="2.2" stroke-linecap="round"/>
+  <circle cx="16" cy="11.6" r="2.4" fill="#E5622E"/>
+</svg>

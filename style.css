@@ -438,7 +438,7 @@ nav.top.scrolled .container { height: 54px; }
   font-size: 11px;
   letter-spacing: 0.06em;
   line-height: 1.75;
-  color: var(--fog-faint);
+  color: var(--fog-mute);   /* informativo (estado · año): AA sobre basalt/ash */
 }
 /* el separador · solo existe en la variante móvil de una línea */
 .sec-meta .msep { display: none; }
@@ -560,7 +560,7 @@ nav.top.scrolled .container { height: 54px; }
   font-family: var(--font-mono);
   font-size: 11px;
   letter-spacing: 0.06em;
-  color: var(--fog-faint);
+  color: var(--fog-mute);   /* informativo (plataforma): AA sobre basalt/ash */
   margin-left: auto;
 }
 .trajectory-desc {
